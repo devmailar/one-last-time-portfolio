@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Approach to Building New Features</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#C7C7CC" />
+    <link href="https://fonts.cdnfonts.com/css/america-faster" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/anonymous-pro" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+
+          fontFamily: {
+            americafaster: ["America Faster"],
+            anonymouspro: ["Anonymous Pro"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="w-screen h-screen bg-[#C7C7CC] flex justify-center mt-20 mb-96">
+    <div class="flex flex-col gap-8 w-[40rem]">
+      <h1 class="text-[2rem] text-[#000] leading-none font-americafaster">
+        Engineering Approach to Building New Features
+      </h1>
+      <span class="text-sm text-[#000] font-anonymouspro">July, 13, 2024</span>
+
+      <div class="flex flex-col gap-6">
+        <p class="text-[1.25rem] text-[#000] font-anonymouspro leading-none">
+          This post explores the key steps in creating new features: Ideation, Define Requirements, Prototyping, and
+          Deployment at Scale.
+        </p>
+
+        <h2 class="text-[1.25rem] text-[#000] leading-none font-americafaster">Ideation</h2>
+        <ol class="list-disc flex flex-col gap-3 text-[1.00rem] text-[#000] font-anonymouspro leading-none">
+          <li>
+            User Feedback: Listening to users through feedback channels like trustpilot, forums, and social media to
+            understand their needs and problems.
+          </li>
+          <li>
+            Internal Brainstorming: Holding team meetings where different team members share their thoughts and
+            suggestions.
+          </li>
+          <li>
+            Competitive Analysis: Looking at what competitors are doing and identifying areas for improvement or
+            innovation.
+          </li>
+          <li>Alignment with Vision: Ensuring the idea fits with the overall goals and direction of the platform.</li>
+        </ol>
+
+        <h2 class="text-[1.25rem] text-[#000] leading-none font-americafaster">Define Requirements</h2>
+        <ol class="list-disc flex flex-col gap-3 text-[1.00rem] text-[#000] font-anonymouspro leading-none">
+          <li>Functional Requirements: Outlining what the feature should do and how it should work.</li>
+          <li>Non-Functional Requirements: Addressing aspects like performance, scalability, and security.</li>
+          <li>
+            Technical Specifications: Creating detailed plans for the technical side of the feature, including
+            architecture and data flow.
+          </li>
+        </ol>
+
+        <h2 class="text-[1.25rem] text-[#000] leading-none font-americafaster">Prototyping</h2>
+        <ol class="list-disc flex flex-col gap-3 text-[1.00rem] text-[#000] font-anonymouspro leading-none">
+          <li>Iteration and Feedback: Developing an initial version and making improvements based on feedback.</li>
+          <li>Technical Validation: Testing different technologies and architectures to find the best solution.</li>
+          <li>UX Testing: Ensuring the feature is easy to use and meets user expectations through usability tests.</li>
+        </ol>
+
+        <h2 class="text-[1.25rem] text-[#000] leading-none font-americafaster">Deployment at Scale</h2>
+        <ol class="list-disc flex flex-col gap-3 text-[1.00rem] text-[#000] font-anonymouspro leading-none">
+          <li>Scalability: Ensuring the feature can handle the expected number of users.</li>
+          <li>Security: Conducting security checks to protect user data.</li>
+          <li>
+            CI/CD Pipelines: Using Continuous Integration and Continuous Deployment to automate and streamline the
+            deployment process.
+          </li>
+          <li>Beta Testing: Releasing the feature to a small group of users to identify any issues.</li>
+          <li>Gradual Rollout: Slowly making the feature available to more users to ensure a smooth transition.</li>
+          <li>Monitoring and Support: Continuously monitoring the feature and providing support to users.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
